@@ -1,0 +1,154 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ecfeff;
+    color: #334155;
+}
+
+/* ===== TOP ACTION BAR ===== */
+#company-button {
+    width: 90%;
+    margin: 30px auto;
+    padding: 22px 26px;
+    border-radius: 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(135deg, #06b6d4, #0ea5a4);
+    box-shadow: 0 12px 28px rgba(6,182,212,0.35);
+}
+
+/* Action Button */
+#company-button button {
+    padding: 11px 26px;
+    border: none;
+    border-radius: 28px;
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0ea5a4;
+
+    box-shadow: 0 6px 15px rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+#company-button button:hover {
+    background: #0ea5a4;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(14,165,164,0.45);
+}
+
+/* ===== Company Container ===== */
+#company-container {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+/* ===== Company Card ===== */
+#company-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    padding: 22px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+}
+
+#company-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* ===== Card Content ===== */
+#company-card h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+#company-card h5 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+/* Buttons (Initially Hidden) */
+#edit,
+#delete {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 8px 6px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Show buttons on hover */
+#company-card:hover #edit,
+#company-card:hover #delete {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Edit Button */
+#edit {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #ffffff;
+}
+
+/* Delete Button */
+#delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+}
+
+#edit:hover {
+    transform: scale(1.05);
+}
+
+#delete:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    #navlinks {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #header input[type="search"] {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #company-container {
+        padding: 20px;
+    }
+}
+
